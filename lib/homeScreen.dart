@@ -1,7 +1,12 @@
+import 'dart:convert';
 import 'dart:io';
+// import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:mime/mime.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,7 +18,44 @@ class _HomeScreenState extends State<HomeScreen> {
   File image;
   String resultText = "fetching result" ;
   final pickerImage = ImagePicker();
-  
+
+  Future<Map<String,dynamic>> getResponse(File imageFile) async
+  {
+    final typeData  = lookupMimeType(imageFile.path,headerBytes: [0xFF,0xD8]).split("/");
+    final imageUploadRequest = http.MultipartRequest("POST",Uri.parse("http://max-image-caption-generator-projecttest1.2886795278-80-hazel04.environments.katacoda.com/model/predict"));
+    final file = await http.MultipartFile.fromPath("image", imageFile.path,contentType: MediaType(typeData[0], typeData[1]));
+    imageUploadRequest.fields["ext"] = typeData[1];
+    imageUploadRequest.files.add(file);
+
+    try{
+      final responseUpload = await imageUploadRequest.send();
+      final response = await http.Response.fromStream(responseUpload);
+      final Map<String,dynamic> responseData = json.decode(response.body);
+      parseResponse(responseData);
+      return responseData;
+    }
+    catch(e)
+    {
+      print(e);
+      return null;
+    }
+  }
+
+   parseResponse( var response)
+   {
+     String result = "";
+     var predictions = response["predictions"];
+     for(var pred in predictions)
+       {
+         var caption = pred["caption"];
+         var probability = pred["probability"];
+         result = result + caption + "\n\n";
+       }
+     setState(() {
+       resultText = result;
+     });
+   }
+
   pickImageFromGallery() async
   {
     var imageFile = await pickerImage.getImage(source: ImageSource.gallery);
@@ -23,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
         image = File(imageFile.path);
         loading = false;
       });
+      
+      var res = getResponse(image);
     }
   }
 
@@ -35,6 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
         image = File(imageFile.path);
         loading = false;
       });
+
+      var res = getResponse(image);
     }
   }
 
