@@ -23,8 +23,14 @@ Our model consist of Encoder-Decoder architecture in which Encoder consist of th
 Decoder: Both the feature extractor and sequence processor outputs a fixed-length vector. These are merged together and processed by a dense layer to make a final prediction. Both the input models(photo feature extractor and sequence processor) produce a 256 element vector and then to a final output dense layer that makes a softmax prediction over the entire output vocabulary for the next word in the sequence.
 
 ### Elaborated Architecture 
+![](/photo/Plot-of-the-Caption-Generation-Deep-Learning-Model.webp)
 
 ## OUTPUT FROM OUR CODE SNIPPET
+![](/photo/2.PNG)
+
+![](/photo/3.PNG)
+
+![](/photo/4.PNG)
 
 
 
