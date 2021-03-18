@@ -36,6 +36,11 @@ Decoder: Both the feature extractor and sequence processor outputs a fixed-lengt
 
 ![](/photo/4.PNG)
 
+## Integration of our model with web-app using flutter framework :
+
+- UI/UX of our app:
+
+
 
 
 
