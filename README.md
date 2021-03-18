@@ -10,7 +10,7 @@ We have used Flicker8k dataset. This dataset consists of two files :
 
 We have defined  deep learning based “merge-model” for image captioning :
 
-![](photos/Schematic-of-the-Merge-Model-For-Image-Captioning.webp)
+![](/photo/Schematic-of-the-Merge-Model-For-Image-Captioning.webp)
 
 
 
