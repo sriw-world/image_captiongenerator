@@ -41,7 +41,9 @@ Decoder: Both the feature extractor and sequence processor outputs a fixed-lengt
 - UI/UX of our app:
 
 
-![]("/photo/WhatsApp Image 2021-03-16 at 11.41.43 AM (1).jpeg")
+![](/photo/8.jpeg)
+![](/photo/9.jpeg)
+![](/photo/10.jpeg)
 
 
 
