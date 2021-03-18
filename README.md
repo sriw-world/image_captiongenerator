@@ -6,6 +6,8 @@ We have used Flicker8k dataset. This dataset consists of two files :
 - Flickr8k_Dataset.zip (1 Gigabyte) An archive of all photographs.
 - Flickr8k_text.zip (2.2 Megabytes) An archive of all text descriptions for photographs
 
+---
+
 ## Model Architecture
 
 We have defined  deep learning based “merge-model” for image captioning :
@@ -24,6 +26,8 @@ Decoder: Both the feature extractor and sequence processor outputs a fixed-lengt
 
 ### Elaborated Architecture 
 ![](/photo/Plot-of-the-Caption-Generation-Deep-Learning-Model.webp)
+
+---
 
 ## OUTPUT FROM OUR CODE SNIPPET
 ![](/photo/2.PNG)
