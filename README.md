@@ -1,16 +1,7 @@
-# captions_generator_test
+## Image Caption Generator
+It is a challenging artificial intelligence problem where a text description must be generated for a given photograph.
+It requires both method from field of Computer Vision(CNN) to understand the content of the image and a language model from the field of Natural Language Processing to turn the understanding of image into words in right order.
 
-A new Flutter application.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+We have used Flicker8k dataset. This dataset consists of two files :
+- Flickr8k_Dataset.zip (1 Gigabyte) An archive of all photographs.
+- Flickr8k_text.zip (2.2 Megabytes) An archive of all text descriptions for photographs
