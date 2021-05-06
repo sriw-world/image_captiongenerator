@@ -44,7 +44,6 @@ Decoder: Both the feature extractor and sequence processor outputs a fixed-lengt
 ![](/photo/8.jpeg)
 ![](/photo/9.jpeg)
 ![](/photo/10.jpeg)
-
 ![](/photo/Screenshot (180).png)
 
 
